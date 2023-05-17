@@ -1,0 +1,125 @@
+@media only screen and (max-width: 993px) {
+    .myNavBar{
+        display: none;
+    }
+    .burger-menu{
+        display: block;
+    }
+    .mobileLogo{
+        position: absolute;
+        z-index: 31;
+        width: 100%;
+        display: block;
+    }
+    .mobileLogo .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobileLogo .logo img{
+        width: 70%;
+    }
+    .mobileLogo .logo a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .line{
+        display: none;
+    }
+    #AboutIndex .seoImg{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    #AboutIndex .seoImg .nameSeo{
+        align-self: auto;
+    }
+    #AboutIndex .seoaboutText{
+        padding: 0 ;
+    }
+    #AboutIndex .seoaboutText p{
+        text-align: center !important;
+    }
+    #AboutIndex .aboutText{
+        padding: 0;
+        text-align: center;
+    }
+    #AboutIndex .aboutText p{
+        text-align: center;
+    }
+    #AboutIndex .aboutImg{
+        justify-content: center !important;
+    }
+    #AboutIndex .bottomAbout{
+        flex-direction: column-reverse;
+    }
+    .carousel-inner {
+        height: 500px;
+    }
+    .carousel-inner img{
+        height: 500px;
+        object-fit: cover;
+    }
+    footer .footerBigBox{
+        justify-content: center !important;
+    }
+    footer .footerBigBox{
+        justify-content: center !important;
+    }
+    footer .logoFooter img{
+        width: 40%;
+        object-fit: contain !important;
+    }
+    .logoFooter{
+        display: flex ;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width: 568px) {
+    .mobileLogo .logo img{
+        width: 50%;
+    }
+    .carousel-inner {
+        height: 300px;
+    }
+    .carousel-inner img{
+        height: 300px;
+        object-fit: cover;
+    }
+    #carouselExampleFade .textBoxing{
+        top: 5rem;
+        width: 80%;
+        left: 10%;
+    }
+    #carouselExampleFade .textBoxing h1{
+        font-size: 24px !important;
+    }
+    #carouselExampleFade .textBoxing p{
+        font-size: 14px !important;
+    }
+    .logoFooter{
+        display: flex ;
+        justify-content: center;
+    }
+    footer .footerBigBox .footerBox .top  a{
+        font-size: 13px !important;
+    }
+    footer .copyright{
+        height: 35px !important;
+    }
+    footer .copyright span{
+        font-size: 13px ;
+    }
+    footer .footerBigBox{
+        justify-content: center !important;
+    }
+    footer .logoFooter img{
+        width: 40%;
+        object-fit: contain !important;
+    }
+} 
+
