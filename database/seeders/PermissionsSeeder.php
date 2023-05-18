@@ -11,6 +11,7 @@ class PermissionsSeeder extends Seeder
     public function run()
     {
         $permissions = [
+            'about',
             'slider',
             'categories',
             'languages',
@@ -30,8 +31,6 @@ class PermissionsSeeder extends Seeder
             'new-element',
             'contact index',
             'contact delete',
-            'about index',
-            'about delete',
             'newsletter index',
             'newsletter create',
             'newsletter delete',

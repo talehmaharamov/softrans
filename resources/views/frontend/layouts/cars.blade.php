@@ -9,6 +9,7 @@
         </div>
     </div>
     <div class="wrapper">
+
         <div class="carousell">
             @foreach($cars as $car)
                 <div>
@@ -21,7 +22,7 @@
                             <div class="card-content">
                                 <div class="card-title">{{ $car->translate(app()->getLocale())->name ?? '-' }}</div>
                                 <div class="card-text">
-                                    <p>{{ $car->translate(app()->getLocale())->description ?? '-' }}</p>
+                                    <p>{!!  $car->translate(app()->getLocale())->description ?? '-' !!}</p>
                                 </div>
                             </div>
                         </div>

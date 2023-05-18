@@ -1,9 +1,9 @@
 @extends('master.backend')
 @section('title',__('backend.settings'))
 @section('content')
-    <div class="main-content">
-        <div class="page-content">
-            <div class="container-fluid">
+{{--    <div class="main-content">--}}
+{{--        <div class="page-content">--}}
+{{--            <div class="container-fluid">--}}
                 <div class="row justify-content-center">
                     <div class="col-xl-6 ">
                         <div class="card">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 @endsection

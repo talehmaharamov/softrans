@@ -19,18 +19,16 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>@lang('backend.slug'):</th>
-                    <th>@lang('backend.time'):</th>
+                    <th>@lang('backend.photo'):</th>
                     <th>@lang('backend.actions'):</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($partnerss as $partners)
+                @foreach($partners as $partner)
                     <tr>
-                        <td>{{ $partners->id }}</td>
-                        <td>{{ $partners->slug }}</td>
-                        <td>{{ date('d.m.Y H:i:s',strtotime($partners->created_at)) }}</td>
-                        @include('backend.templates.components.dt-settings',['partners' => 'partners'])
+                        <td>{{ $partner->id }}</td>
+                        <td><img src="{{ asset($partner->photo) }}" style="width: 120px;height: 80px;"></td>
+                        @include('backend.templates.components.dt-settings',['variable' => 'partners','value' => $partner])
                     </tr>
                 @endforeach
                 </tbody>

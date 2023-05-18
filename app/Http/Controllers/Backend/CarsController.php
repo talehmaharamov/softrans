@@ -33,17 +33,17 @@ class CarsController extends Controller
             foreach (active_langs() as $lang) {
                 $carTranslation = new CarsTranslation();
                 $carTranslation->locale = $lang->code;
-                $carTranslation->car_id = $car->id;
+                $carTranslation->cars_id = $car->id;
                 $carTranslation->name = $request->name[$lang->code];
                 $carTranslation->description = $request->description[$lang->code];
                 $carTranslation->save();
             }
-            alert()->success(__('messages.success'));
-            return redirect(route('backend.cars.index'));
-        } catch (\Exception $e) {
-            alert()->error(__('messages.error'));
-            return redirect(route('backend.cars.index'));
-        }
+                alert()->success(__('messages.success'));
+                return redirect(route('backend.cars.index'));
+            } catch (\Exception $e) {
+                alert()->error(__('messages.error'));
+                return redirect(route('backend.cars.index'));
+            }
     }
 
     public function edit(string $id)

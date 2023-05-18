@@ -3,7 +3,7 @@
         <div class="row mt-5 align-items-center">
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="logoFooter">
-                    <img src="{{asset('frontend/img/Group 25 (1).svg')}}" alt="Softrans.az">
+                    <img src="{{asset('backend/images/logo.png')}}" alt="Softrans.az">
                 </div>
             </div>
             <div class="col-lg-8 col-md-6 col-sm-12">

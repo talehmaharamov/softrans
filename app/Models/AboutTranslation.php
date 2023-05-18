@@ -10,10 +10,10 @@ class AboutTranslation extends Model
 {
     use LogsActivity;
     public $timestamps = false;
-    protected $fillable = ['title','description'];
+    protected $fillable = ['description'];
 
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults()->logOnly(['title','description']);
+        return LogOptions::defaults()->logAll();
     }
 }

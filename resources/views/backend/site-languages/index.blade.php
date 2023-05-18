@@ -7,9 +7,9 @@
 <link href="{{ asset('backend/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
-<div class="main-content">
-    <div class="page-content">
-        <div class="container-fluid">
+{{--<div class="main-content">--}}
+{{--    <div class="page-content">--}}
+{{--        <div class="container-fluid">--}}
             <div class="card">
                 <div class="card-body">
                     <div class="col-12">
@@ -61,9 +61,9 @@
                     </table>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 @endsection
 @section('scripts')
 <script src="{{ asset('backend/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>

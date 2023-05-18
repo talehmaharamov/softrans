@@ -4,42 +4,24 @@
     <div class="row justify-content-center">
         <div class="col-xl-9">
             <div class="card">
-                <form action="{{ route('backend.partners.update',$id) }}" class="needs-validation" novalidate method="post"
+                <form action="{{ route('backend.partners.update',$id) }}" class="needs-validation" novalidate
+                      method="post"
                       enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="card-body">
                         @include('backend.templates.components.card-col-12',['variable' => 'partners'])
-                        @include('backend.templates.components.multi-lan-tab')
-                        <div class="tab-content p-3 text-muted">
-                            @foreach(active_langs() as $lan)
-                                <div class="tab-pane @if($loop->first) active show @endif" id="{{ $lan->code }}"
-                                     role="tabpanel">
-                                    <div class="form-group row">
-                                        <div class="mb-3">
-                                            <label>@lang('backend.name') <span class="text-danger">*</span></label>
-                                            <input name="name[{{ $lan->code }}]" type="text" class="form-control"
-                                                   required="" placeholder="@lang('backend.name')">
-                                            <div class="valid-feedback">
-                                                @lang('backend.name') @lang('messages.is-correct')
-                                            </div>
-                                            <div class="invalid-feedback">
-                                                @lang('backend.name') @lang('messages.not-correct')
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                            <div class="mb-3">
-                                <label>@lang('backend.slug') <span class="text-danger">*</span></label>
-                                <input name="slug" type="text" class="form-control" required placeholder="/news">
-                                <div class="valid-feedback">
-                                    @lang('backend.slug') @lang('messages.is-correct')
-                                </div>
-                                <div class="invalid-feedback">
-                                    @lang('backend.slug') @lang('messages.not-correct')
-                                </div>
-                            </div>
+                        <div class="mb-3">
+                            <label>@lang('backend.photo')<span class="text-danger">*</span></label>
+                            <input name="photo" type="file" class="form-control" required>
+                            @if(file_exists($partner->photo))
+                                <img src="{{ asset($partner->photo) }}" class="form-control mt-2" width="100%">
+                            @endif
+                            {!! validation_response('backend.photo') !!}
+                        </div>
+                        <div class="mb-3">
+                            <label>@lang('backend.link')</label>
+                            <input name="link" type="text" class="form-control" value="{{ $partner->link }}">
                         </div>
                     </div>
                     @include('backend.templates.components.buttons')

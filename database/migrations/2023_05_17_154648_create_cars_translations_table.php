@@ -10,12 +10,12 @@ return new class extends Migration
     {
         Schema::create('cars_translations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('car_id')->unsigned();
+            $table->foreignId('cars_id')->unsigned();
             $table->string('locale')->index();
             $table->longText('name');
             $table->longText('description');
-            $table->unique(['car_id', 'locale']);
-            $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
+            $table->unique(['cars_id', 'locale']);
+            $table->foreign('cars_id')->references('id')->on('cars')->onDelete('cascade');
             $table->timestamps();
         });
     }

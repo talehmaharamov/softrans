@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             LanguageSeeder::class,
             PermissionsSeeder::class,
             MetaSeeder::class,
-            AboutSeeder::class,
+//            AboutSeeder::class,
             SettingSeeder::class,
             AdminSeeder::class,
         ]);

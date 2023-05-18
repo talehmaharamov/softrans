@@ -56,6 +56,9 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
         Route::get('cars/{id}/change-status', [App\Http\Controllers\Backend\CarsController::class, 'status'])->name('carsStatus');
 
+        Route::get('about/{id}/change-status', [App\Http\Controllers\Backend\AboutController::class, 'status'])->name('aboutStatus');
+
+
         Route::get('/site-language/{id}/change-status', [BSiteLan::class, 'siteLanStatus'])->name('siteLanStatus');
         Route::get('/categories/{id}/change-status', [BCategory::class, 'categoryStatus'])->name('categoryStatus');
         Route::get('/settings/{id}/change-status', [BSetting::class, 'settingStatus'])->name('settingStatus');
@@ -69,6 +72,8 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
         Route::get('cars/{id}/delete', [App\Http\Controllers\Backend\CarsController::class, 'delete'])->name('carsDelete');
 
+        Route::get('about/{id}/delete', [App\Http\Controllers\Backend\AboutController::class, 'delete'])->name('aboutDelete');
+
         Route::get('/site-languages/{id}/delete', [BSiteLan::class, 'delSiteLang'])->name('delSiteLang');
         Route::get('/categories/{id}/delete', [BCategory::class, 'delCategory'])->name('delCategory');
         Route::get('/contact-us/{id}/delete', [BContact::class, 'delContactUS'])->name('delContactUS');
@@ -81,6 +86,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('/permission/{id}/delete', [BPermission::class, 'delPermission'])->name('delPermission');
         Route::get('/post/{id}/delete', [BPost::class, 'delPost'])->name('delPost');
         Route::get('/newsletter/{id}/delete', [BNewsletter::class, 'delNewsletter'])->name('delNewsletter');
+
     });
 //Resources
     Route::group(['name' => 'resource'], function () {

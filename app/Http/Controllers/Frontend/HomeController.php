@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Newsletter;
 use App\Models\Order;
+use App\Models\Partners;
 use App\Models\Paylasim;
 use App\Models\PaylasimTranslation;
 use App\Models\Product;
@@ -20,15 +21,10 @@ use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
-    public function agreeTerm()
-    {
-        Session::put('term', true);
-        return redirect()->back();
-    }
-
     public function index()
     {
         $cars = Cars::where('status', 1)->get();
+        $partners = Partners::where('status', 1)->get();
         return view('frontend.index', get_defined_vars());
     }
 
@@ -81,32 +77,32 @@ class HomeController extends Controller
 
     public function newOrder(Request $request)
     {
-        try {
-            $receiver = settings('mail_receiver');
-            $order = new Order();
-            $order->name = $request->name;
-            $order->surname = $request->surname;
-            $order->email = $request->email;
-            $order->phone = $request->phone;
-            $order->order = $request->order;
-            $order->save();
-            $data = [
-                'name' => $order->name,
-                'surname' => $order->surname,
-                'email' => $order->email,
-                'phone' => $order->phone,
-                'order' => $order->order
-            ];
-            Mail::send('backend.mail.order', $data, function ($message) use ($receiver) {
-                $message->to($receiver);
-                $message->subject(__('backend.you-have-new-order'));
-            });
-            alert()->success(__('messages.success'));
-            return redirect(route('frontend.createOrder'));
-        } catch (Exception $e) {
-            alert()->error(__('backend.error'));
-            return redirect(route('frontend.createOrder'));
-        }
+//        try {
+//            $receiver = settings('mail_receiver');
+//            $order = new Order();
+//            $order->name = $request->name;
+//            $order->surname = $request->surname;
+//            $order->email = $request->email;
+//            $order->phone = $request->phone;
+//            $order->order = $request->order;
+//            $order->save();
+//            $data = [
+//                'name' => $order->name,
+//                'surname' => $order->surname,
+//                'email' => $order->email,
+//                'phone' => $order->phone,
+//                'order' => $order->order
+//            ];
+//            Mail::send('backend.mail.order', $data, function ($message) use ($receiver) {
+//                $message->to($receiver);
+//                $message->subject(__('backend.you-have-new-order'));
+//            });
+//            alert()->success(__('messages.success'));
+//            return redirect(route('frontend.createOrder'));
+//        } catch (Exception $e) {
+//            alert()->error(__('backend.error'));
+//            return redirect(route('frontend.createOrder'));
+//        }
     }
 
     public function sendMessage(Request $request)
