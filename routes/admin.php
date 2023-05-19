@@ -52,6 +52,10 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/newsletter/history', [BNewsletter::class, 'newsletterHistory'])->name('newsletterHistory');
 //Statuses
     Route::group(['name' => 'status'], function () {
+Route::get('director/{id}/change-status',[App\Http\Controllers\Backend\DirectorController::class,'status'])->name('directorStatus');
+
+Route::get('who/{id}/change-status',[App\Http\Controllers\Backend\WhoController::class,'status'])->name('whoStatus');
+
         Route::get('partners/{id}/change-status', [App\Http\Controllers\Backend\PartnersController::class, 'status'])->name('partnersStatus');
 
         Route::get('cars/{id}/change-status', [App\Http\Controllers\Backend\CarsController::class, 'status'])->name('carsStatus');
@@ -68,6 +72,10 @@ Route::group(['middleware' => 'auth:admin'], function () {
     });
 //Delete
     Route::group(['name' => 'delete'], function () {
+Route::get('director/{id}/delete',[App\Http\Controllers\Backend\DirectorController::class,'delete'])->name('directorDelete');
+
+Route::get('who/{id}/delete',[App\Http\Controllers\Backend\WhoController::class,'delete'])->name('whoDelete');
+
         Route::get('partners/{id}/delete', [App\Http\Controllers\Backend\PartnersController::class, 'delete'])->name('partnersDelete');
 
         Route::get('cars/{id}/delete', [App\Http\Controllers\Backend\CarsController::class, 'delete'])->name('carsDelete');
@@ -90,6 +98,10 @@ Route::group(['middleware' => 'auth:admin'], function () {
     });
 //Resources
     Route::group(['name' => 'resource'], function () {
+Route::resource('/director',App\Http\Controllers\Backend\DirectorController::class);
+
+Route::resource('/who',App\Http\Controllers\Backend\WhoController::class);
+
         Route::resource('/partners', App\Http\Controllers\Backend\PartnersController::class);
         Route::resource('/cars', App\Http\Controllers\Backend\CarsController::class);
         Route::resource('/categories', BCategory::class);

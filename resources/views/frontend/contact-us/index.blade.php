@@ -17,7 +17,7 @@
                                 <div class="col-lg-6 col-md-6">
                                     <div class="nameInput inpBox">
                                         <label for="">@lang('backend.name')
-                                            <input type="text" placeholder="@lang('backend.name')" required>
+                                            <input type="text" name="name" placeholder="@lang('backend.name')" required>
                                         </label>
                                     </div>
                                 </div>
@@ -25,7 +25,8 @@
                                     <div class="surNameInput inpBox">
                                         <label for="">
                                             @lang('backend.surname')
-                                            <input type="text" placeholder="@lang('backend.surname')" required>
+                                            <input type="text" name="surname" placeholder="@lang('backend.surname')"
+                                                   required>
                                         </label>
                                     </div>
                                 </div>
@@ -33,7 +34,8 @@
                                     <div class="surNameInput inpBox">
                                         <label for="">
                                             @lang('backend.email')
-                                            <input type="email" placeholder="@lang('backend.name')" required>
+                                            <input type="email" name="email" placeholder="@lang('backend.name')"
+                                                   required>
                                         </label>
                                     </div>
                                 </div>
@@ -41,7 +43,8 @@
                                     <div class="numbreInput inpBox">
                                         <label for="">
                                             @lang('backend.subject')
-                                            <input type="text" placeholder="@lang('backend.subject')" required>
+                                            <input type="text" name="subject" placeholder="@lang('backend.subject')"
+                                                   required>
                                         </label>
                                     </div>
                                 </div>
@@ -49,7 +52,8 @@
                                     <div class="textArea inpBox">
                                         <label for="">
                                             @lang('backend.your-order')
-                                            <textarea placeholder="@lang('backend.your-order')" name="" id="" cols="30"
+                                            <textarea placeholder="@lang('backend.your-order')" name="msg" id=""
+                                                      cols="30"
                                                       rows="10" required></textarea>
                                         </label>
                                     </div>
@@ -72,7 +76,8 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <a href="tel:{{ settings('phone') }}"><i class="fal fa-phone-alt"></i>{{ settings('phone') }}</a>
+                                <a href="tel:{{ settings('phone') }}"><i
+                                        class="fal fa-phone-alt"></i>{{ settings('phone') }}</a>
                             </div>
                             <div class="col-12">
                                 <a href="#">

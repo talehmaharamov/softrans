@@ -13,10 +13,6 @@ class CategoryController extends Controller
     {
         if($category = Category::where('slug', $slug)->first()){
             $category = Category::where('slug', $slug)->first();
-            $allPosts = Paylasim::where('status', '=', 1)
-                ->where('category_id', '=', Category::where('slug', '=', $slug)->value('id'))
-                ->where('admin_status', '=', 1)
-                ->get();
             return view('frontend.posts.all', get_defined_vars());
         }
         else{

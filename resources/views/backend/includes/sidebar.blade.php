@@ -8,10 +8,9 @@
                         <span>@lang('backend.dashboard')</span>
                     </a>
                 </li>
+                {{--                {{ creation('Who','Who',true,false) }}--}}
+                {{--                {{ creation('Director','Director',true,false) }}--}}
                 <li class="menu-title">@lang('backend.site-setting')</li>
-
-                {{--                {{ creation('Cars','Cars',true) }}--}}
-                {{--                {{ creation('Partners','Partners',true) }}--}}
                 @can('cars index')
                     <li>
                         <a href="{{ route('backend.cars.index') }}" class="waves-effect">
@@ -28,37 +27,54 @@
                         </a>
                     </li>
                 @endcan
-
-                <li>
-                    <a href="{{ route('backend.about.index') }}" class="waves-effect">
-                        <i class="fas fa-info"></i>
-                        <span>@lang('backend.about')</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('backend.categories.index') }}" class="waves-effect">
-                        <i class="fas fa-bars"></i>
-                        <span>@lang('backend.categories')</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('backend.site-languages.index') }}" class="waves-effect">
-                        <i class="fas fa-language"></i>
-                        <span>@lang('backend.languages')</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('backend.contact-us.index') }}" class="waves-effect">
-                        <i class="ri-contacts-fill"></i>
-                        <span>@lang('backend.contact-us')</span>
-                    </a>
-                </li>
-                {{--                    <li>--}}
-                {{--                        <a href="{{ route('backend.newsletter.index') }}" class="waves-effect">--}}
-                {{--                            <i class="fas fa-user-friends"></i>--}}
-                {{--                            <span>@lang('backend.subscribers')</span>--}}
-                {{--                        </a>--}}
-                {{--                    </li>--}}
+                @can('who index')
+                    <li>
+                        <a href="{{ route('backend.who.index') }}" class="waves-effect">
+                            <i class="fas fa-question"></i>
+                            <span>@lang('backend.who')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('director index')
+                    <li>
+                        <a href="{{ route('backend.director.index') }}" class="waves-effect">
+                            <i class="fas fa-users"></i>
+                            <span>@lang('backend.director')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('slider index')
+                    <li>
+                        <a href="{{ route('backend.slider.index') }}" class="waves-effect">
+                            <i class="fas fa-images"></i>
+                            <span>@lang('backend.slider')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('about index')
+                    <li>
+                        <a href="{{ route('backend.about.index') }}" class="waves-effect">
+                            <i class="fas fa-info"></i>
+                            <span>@lang('backend.about')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('languages index')
+                    <li>
+                        <a href="{{ route('backend.site-languages.index') }}" class="waves-effect">
+                            <i class="fas fa-language"></i>
+                            <span>@lang('backend.languages')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('contact index')
+                    <li>
+                        <a href="{{ route('backend.contact-us.index') }}" class="waves-effect">
+                            <i class="ri-contacts-fill"></i>
+                            <span>@lang('backend.contact-us')</span>
+                        </a>
+                    </li>
+                @endcan
                 @can('settings index')
                     <li>
                         <a href="{{ route('backend.settings.index') }}" class="waves-effect">
@@ -67,13 +83,6 @@
                         </a>
                     </li>
                 @endcan
-                {{--                <li class="menu-title">@lang('backend.seo-settings')</li>--}}
-                {{--                <li>--}}
-                {{--                    <a href="{{ route('backend.seo.index') }}" class="waves-effect">--}}
-                {{--                        <i class="fas fa-tags"></i>--}}
-                {{--                        <span>@lang('backend.tags')</span>--}}
-                {{--                    </a>--}}
-                {{--                </li>--}}
                 <li class="menu-title">@lang('backend.ap-setting')</li>
                 @can('users index')
                     <li>
@@ -88,14 +97,6 @@
                         <a href="{{ route('backend.permissions.index') }}" class=" waves-effect">
                             <i class="ri-lock-2-fill"></i>
                             <span>@lang('backend.permissions')</span>
-                        </a>
-                    </li>
-                @endcan
-                @can('permissions create')
-                    <li>
-                        <a href="{{ route('backend.givePermission') }}" class=" waves-effect">
-                            <i class="ri-lock-unlock-fill"></i>
-                            <span>@lang('backend.give-permission')</span>
                         </a>
                     </li>
                 @endcan

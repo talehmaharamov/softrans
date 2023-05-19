@@ -11,7 +11,7 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('name',20);
+            $table->longText('name');
             $table->longText('link');
             $table->boolean('status');
             $table->timestamps();

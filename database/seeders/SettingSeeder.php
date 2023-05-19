@@ -21,6 +21,43 @@ class SettingSeeder extends Seeder
             ['name' => 'whatsapp', 'link' => '+994555552055'],
             ['name' => 'location_link', 'link' => 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3038.7731633294593!2d49.84233191539517!3d40.39171977936814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDIzJzMwLjIiTiA0OcKwNTAnNDAuMyJF!5e0!3m2!1sru!2saz!4v1684305048420!5m2!1sru!2saz'],
         ];
+        foreach (active_langs() as $lang) {
+            $setting = new Setting();
+            $setting->name = 'sliderTitleIndex_' . $lang->code;
+            $setting->link = $lang->code . 'Title';
+            $setting->status = 1;
+            $setting->save();
+
+            $setting = new Setting();
+            $setting->name = 'sliderTitleAbout_' . $lang->code;
+            $setting->link = $lang->code . 'Title';
+            $setting->status = 1;
+            $setting->save();
+
+            $setting = new Setting();
+            $setting->name = 'sliderTitleContact_' . $lang->code;
+            $setting->link = $lang->code . 'Title';
+            $setting->status = 1;
+            $setting->save();
+
+            $setting = new Setting();
+            $setting->name = 'sliderDescriptionIndex_' . $lang->code;
+            $setting->link = $lang->code . 'Description';
+            $setting->status = 1;
+            $setting->save();
+
+            $setting = new Setting();
+            $setting->name = 'sliderDescriptionAbout_' . $lang->code;
+            $setting->link = $lang->code . 'Description';
+            $setting->status = 1;
+            $setting->save();
+
+            $setting = new Setting();
+            $setting->name = 'sliderDescriptionContact_' . $lang->code;
+            $setting->link = $lang->code . 'Description';
+            $setting->status = 1;
+            $setting->save();
+        }
         foreach ($settings as $key => $setting) {
             $set = new Setting();
             $set->name = $setting['name'];

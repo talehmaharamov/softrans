@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Cars;
 use App\Models\Category;
 use App\Models\Contact;
+use App\Models\Director;
 use App\Models\Newsletter;
 use App\Models\Order;
 use App\Models\Partners;
@@ -13,6 +14,7 @@ use App\Models\Paylasim;
 use App\Models\PaylasimTranslation;
 use App\Models\Product;
 use App\Models\Slider;
+use App\Models\Who;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -25,6 +27,11 @@ class HomeController extends Controller
     {
         $cars = Cars::where('status', 1)->get();
         $partners = Partners::where('status', 1)->get();
+        $sliders = Slider::where('page', 'index')->where('status', 1)->get();
+        $sliderTitle = settings('sliderTitleIndex_' . app()->getLocale());
+        $sliderDescription = settings('sliderDescriptionIndex_' . app()->getLocale());
+        $who = Who::first();
+        $directors = Director::where('status', 1)->get();
         return view('frontend.index', get_defined_vars());
     }
 
@@ -115,7 +122,7 @@ class HomeController extends Controller
             $contact->email = $request->email;
             $contact->subject = $request->subject;
             $contact->read_status = 0;
-            $contact->message = $request->order;
+            $contact->message = $request->msg;
             $contact->save();
             $data = [
                 'name' => $contact->name,

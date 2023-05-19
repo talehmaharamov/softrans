@@ -38,12 +38,12 @@ class CarsController extends Controller
                 $carTranslation->description = $request->description[$lang->code];
                 $carTranslation->save();
             }
-                alert()->success(__('messages.success'));
-                return redirect(route('backend.cars.index'));
-            } catch (\Exception $e) {
-                alert()->error(__('messages.error'));
-                return redirect(route('backend.cars.index'));
-            }
+            alert()->success(__('messages.success'));
+            return redirect(route('backend.cars.index'));
+        } catch (\Exception $e) {
+            alert()->error(__('messages.error'));
+            return redirect(route('backend.cars.index'));
+        }
     }
 
     public function edit(string $id)

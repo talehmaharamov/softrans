@@ -7,6 +7,7 @@ use App\Models\About;
 use App\Models\Cars;
 use App\Models\Director;
 use App\Models\Forigner;
+use App\Models\Slider;
 use App\Models\WhyGefen;
 
 class AboutController extends Controller
@@ -15,6 +16,9 @@ class AboutController extends Controller
     {
         $abouts = About::where('status', 1)->get();
         $cars = Cars::where('status', 1)->get();
+        $sliders = Slider::where('page', 'about')->where('status', 1)->get();
+        $sliderTitle = settings('sliderTitleAbout_' . app()->getLocale());
+        $sliderDescription = settings('sliderDescriptionAbout_' . app()->getLocale());
         return view('frontend.about.index', get_defined_vars());
     }
 }

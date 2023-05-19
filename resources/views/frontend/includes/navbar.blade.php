@@ -46,31 +46,16 @@
                     </div>
                     <div class="col-4">
                         <div class="pagesList">
-                            <a href="{{ route('frontend.about') }}" >@lang('backend.about')</a>
+                            <a href="{{ route('frontend.about') }}">@lang('backend.about')</a>
                             <a href="{{ route('frontend.contact-us-page') }}"
-                               >@lang('backend.contact-us')</a>
+                            >@lang('backend.contact-us')</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="textBoxing">
-        <h1>Logistika Xidməti </h1>
-        <p>Sizə tədarük zəncirinin bütün sahələri daxil olmaqla, həm öz ehtiyaclarınıza, həm də yük tələblərinə
-            uyğunlaşaraq, başdan sona logistika xidməti təklif edirik.</p>
-    </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{{asset('frontend/img/slide1.png')}}" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="{{asset('frontend/img/slide1.png')}}" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="{{asset('frontend/img/slide1.png')}}" class="d-block w-100" alt="...">
-        </div>
-    </div>
+    @include('frontend.layouts.slider')
 </div>
 <div class="burger-menu">
     <a href="" class="burger-menu_button">
@@ -97,9 +82,9 @@
                 <a href="{{ settings('instagram') }}"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-        <a href="{{ route('frontend.about') }}" class="burger-menu_link" >@lang('backend.about')</a>
+        <a href="{{ route('frontend.about') }}" class="burger-menu_link">@lang('backend.about')</a>
         <a href="{{ route('frontend.contact-us-page') }}" class="burger-menu_link"
-           >@lang('backend.contact-us')</a>
+        >@lang('backend.contact-us')</a>
     </nav>
     <div class="burger-menu_overlay"></div>
 </div>

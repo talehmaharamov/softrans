@@ -23,6 +23,8 @@ class PermissionsSeeder extends Seeder
             'dodenv',
             'cars',
             'partners',
+            'who',
+            'director',
         ];
         foreach ($permissions as $permission) {
             add_permission($permission);
